@@ -42,8 +42,9 @@ jobs:
       - run: pebble build
       - name: Upload PBW to release
         run: |
-          VERSION=${{ needs.release-please.outputs.tag_name }}
+          TAG=${{ needs.release-please.outputs.tag_name }}
+          VERSION=$(echo "${TAG}" | grep -oP 'v[\d.]+')
           cp build/home-assistant-shortcuts.pbw "home-assistant-shortcuts-${VERSION}.pbw"
-          gh release upload "${VERSION}" "home-assistant-shortcuts-${VERSION}.pbw"
+          gh release upload "${TAG}" "home-assistant-shortcuts-${VERSION}.pbw"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
