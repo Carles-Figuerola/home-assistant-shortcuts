@@ -46,7 +46,7 @@ static char s_result_buffer[64];
 static bool s_result_is_success;
 
 #define DIALOG_MARGIN 10
-#define RESULT_DISMISS_MS 2000
+#define RESULT_DISMISS_MS 1500
 
 // --- Persistence ---
 
@@ -89,7 +89,8 @@ static void result_anim_stopped(Animation *animation, bool finished, void *ctx) 
 
 static void result_dismiss_callback(void *data) {
   s_dismiss_timer = NULL;
-  window_stack_remove(s_result_window, true);
+  // Close the app after showing the result
+  window_stack_pop_all(true);
 }
 
 static void result_window_appear(Window *window) {
