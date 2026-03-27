@@ -1,5 +1,12 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -15,5 +22,6 @@ jobs:
     container: rebble/pebble-sdk
     steps:
       - uses: actions/checkout@v4
+      - run: mkdir -p ~/.pebble-sdk && touch ~/.pebble-sdk/NO_TRACKING
       - run: npm install
       - run: pebble build
