@@ -11,7 +11,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -19,9 +19,14 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: rebble/pebble-sdk
     steps:
-      - uses: actions/checkout@v4
-      - run: mkdir -p ~/.pebble-sdk && touch ~/.pebble-sdk/NO_TRACKING
-      - run: npm install
-      - run: pebble build
+      - uses: actions/checkout@v6
+      - name: Checkout Pebble SDK devcontainer
+        uses: actions/checkout@v6
+        with:
+          repository: FBarrCa/pebble-devcontainer
+          path: pebble-devcontainer
+      - name: Build Pebble SDK container
+        run: docker build -t pebble-sdk --build-arg PEBBLE_SDK_VERSION=4.9.148 pebble-devcontainer
+      - name: Build app
+        run: docker run --rm -v $PWD:/app -w /app pebble-sdk bash -c "mkdir -p ~/.pebble-sdk && touch ~/.pebble-sdk/NO_TRACKING && npm install && pebble build"
