@@ -129,14 +129,11 @@ Pebble.addEventListener('appmessage', function (e) {
   req.send('{}');
 });
 
-// TODO: remove delay — only for GIF capture
 function sendResult(code, text) {
-  setTimeout(function () {
-    var msg = {};
-    msg[messageKeys.ResultCode] = code;
-    msg[messageKeys.ResultText] = text;
-    Pebble.sendAppMessage(msg);
-  }, 1000);
+  var msg = {};
+  msg[messageKeys.ResultCode] = code;
+  msg[messageKeys.ResultText] = text;
+  Pebble.sendAppMessage(msg);
 }
 
 Pebble.addEventListener('ready', function () {});

@@ -1,0 +1,46 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  build-pbw:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install uv
+        run: pip install uv
+      - name: Install pebble-tool
+        run: |
+          uv tool install pebble-tool --python 3.13
+          mkdir -p ~/.pebble-sdk && touch ~/.pebble-sdk/NO_TRACKING
+      - name: Install Pebble SDK
+        run: pebble sdk install 4.9.148
+      - run: npm install
+      - run: pebble build
+      - name: Upload PBW to release
+        run: gh release upload ${{ needs.release-please.outputs.tag_name }} build/home-assistant-shortcuts.pbw
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
