@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Carles-Figuerola/home-assistant-shortcuts/compare/home-assistant-shortcuts-v1.0.2...home-assistant-shortcuts-v1.1.0) (2026-03-27)
+
+
+### Features
+
+* pebble store doesn't use patch version ([#11](https://github.com/Carles-Figuerola/home-assistant-shortcuts/issues/11)) ([e977346](https://github.com/Carles-Figuerola/home-assistant-shortcuts/commit/e977346abb8902859395f84bc4723b317bb4d14d))
+
 ## [1.0.2](https://github.com/Carles-Figuerola/home-assistant-shortcuts/compare/home-assistant-shortcuts-v1.0.1...home-assistant-shortcuts-v1.0.2) (2026-03-27)
 
 
