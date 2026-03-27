@@ -41,6 +41,9 @@ jobs:
       - run: npm install
       - run: pebble build
       - name: Upload PBW to release
-        run: gh release upload ${{ needs.release-please.outputs.tag_name }} build/home-assistant-shortcuts.pbw
+        run: |
+          VERSION=${{ needs.release-please.outputs.tag_name }}
+          cp build/home-assistant-shortcuts.pbw "home-assistant-shortcuts-${VERSION}.pbw"
+          gh release upload "${VERSION}" "home-assistant-shortcuts-${VERSION}.pbw"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
