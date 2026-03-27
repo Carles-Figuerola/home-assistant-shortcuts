@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Carles-Figuerola/home-assistant-shortcuts/compare/home-assistant-shortcuts-v1.0.1...home-assistant-shortcuts-v1.0.2) (2026-03-27)
+
+
+### Bug Fixes
+
+* back to clockface when activating action ([#8](https://github.com/Carles-Figuerola/home-assistant-shortcuts/issues/8)) ([7f6b7d9](https://github.com/Carles-Figuerola/home-assistant-shortcuts/commit/7f6b7d993147763217353e8b0bacfffc313cc319))
+
 ## [1.0.1](https://github.com/Carles-Figuerola/home-assistant-shortcuts/compare/home-assistant-shortcuts-v1.0.0...home-assistant-shortcuts-v1.0.1) (2026-03-27)
 
 
