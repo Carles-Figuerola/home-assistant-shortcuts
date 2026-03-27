@@ -1,7 +1,7 @@
 {
   "name": "home-assistant-shortcuts",
   "author": "cfiguerola",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "dependencies": {
     "@rebble/clay": "^1.0.8"
   },
