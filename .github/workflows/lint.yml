@@ -1,10 +1,17 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -12,8 +19,18 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: rebble/pebble-sdk
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install uv
+        run: pip install uv
+      - name: Install pebble-tool
+        run: |
+          uv tool install pebble-tool --python 3.13
+          mkdir -p ~/.pebble-sdk && touch ~/.pebble-sdk/NO_TRACKING
+      - name: Install Pebble SDK
+        run: pebble sdk install 4.9.148
       - run: npm install
       - run: pebble build

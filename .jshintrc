@@ -1,0 +1,13 @@
+{
+  "esversion": 5,
+  "browser": true,
+  "node": true,
+  "globals": {
+    "Pebble": true,
+    "localStorage": true,
+    "XMLHttpRequest": true,
+    "setTimeout": true
+  },
+  "undef": true,
+  "unused": false
+}
