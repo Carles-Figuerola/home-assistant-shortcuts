@@ -94,6 +94,11 @@
         },
         {
           "type": "bitmap",
+          "name": "ICON_PLAY",
+          "file": "images/icon_play.png"
+        },
+        {
+          "type": "bitmap",
           "name": "ICON_CONFIRM",
           "file": "images/confirm.png"
         },
