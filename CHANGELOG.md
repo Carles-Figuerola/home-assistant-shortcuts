@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Carles-Figuerola/home-assistant-shortcuts/compare/home-assistant-shortcuts-v1.0.0...home-assistant-shortcuts-v1.0.1) (2026-03-27)
+
+
+### Bug Fixes
+
+* add play/pause button, remove extra delay ([#6](https://github.com/Carles-Figuerola/home-assistant-shortcuts/issues/6)) ([a03fce4](https://github.com/Carles-Figuerola/home-assistant-shortcuts/commit/a03fce42be3a7b9b00e2e06a2dfbcc285ea16d98))
+
 ## [1.0.0](https://github.com/Carles-Figuerola/home-assistant-shortcuts/compare/home-assistant-shortcuts-v0.1.0...home-assistant-shortcuts-v1.0.0) (2026-03-27)
 
 
