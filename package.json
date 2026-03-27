@@ -1,0 +1,101 @@
+{
+  "name": "home-assistant-shortcuts",
+  "author": "cfiguerola",
+  "version": "1.0.0",
+  "dependencies": {
+    "@rebble/clay": "^1.0.8"
+  },
+  "pebble": {
+    "capabilities": [
+      "configurable"
+    ],
+    "displayName": "Home Assistant Shortcuts",
+    "enableMultiJS": true,
+    "messageKeys": [
+      "ShortcutCount",
+      "Name0", "Name1", "Name2", "Name3", "Name4", "Name5", "Name6", "Name7",
+      "Icon0", "Icon1", "Icon2", "Icon3", "Icon4", "Icon5", "Icon6", "Icon7",
+      "ShortcutIndex",
+      "ResultCode",
+      "ResultText",
+      "Script0", "Script1", "Script2", "Script3", "Script4", "Script5", "Script6", "Script7",
+      "BaseUrl",
+      "Token"
+    ],
+    "projectType": "native",
+    "resources": {
+      "media": [
+        {
+          "menuIcon": true,
+          "type": "bitmap",
+          "name": "IMAGE_MENU_ICON",
+          "file": "images/logo_25.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_GENERIC",
+          "file": "images/icon_generic.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_UNLOCK",
+          "file": "images/icon_unlock.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_LOCK",
+          "file": "images/icon_lock.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_LIGHT",
+          "file": "images/icon_light.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_GARAGE",
+          "file": "images/icon_garage.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_SCENE",
+          "file": "images/icon_scene.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_POWER",
+          "file": "images/icon_power.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_HOME",
+          "file": "images/icon_home.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_CONFIRM",
+          "file": "images/confirm.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_WARNING",
+          "file": "images/warning.png"
+        }
+      ]
+    },
+    "sdkVersion": "3",
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk",
+      "diorite",
+      "emery",
+      "flint",
+      "gabbro"
+    ],
+    "uuid": "6178c4fc-003c-4c44-856f-7ec3ac393c1f",
+    "watchapp": {
+      "watchface": false
+    }
+  }
+}

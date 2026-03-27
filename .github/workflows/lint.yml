@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npx jshint src/js/ --config .jshintrc
+
+  build:
+    runs-on: ubuntu-latest
+    container: rebble/pebble-sdk
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: pebble build
