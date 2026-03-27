@@ -9,7 +9,8 @@ var ICON_OPTIONS = [
   { label: 'Garage', value: '4' },
   { label: 'Scene',  value: '5' },
   { label: 'Power',  value: '6' },
-  { label: 'Home',   value: '7' }
+  { label: 'Home',   value: '7' },
+  { label: 'Play',   value: '8' }
 ];
 
 function shortcutSection(index) {
